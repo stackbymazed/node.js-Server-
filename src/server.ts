@@ -1,13 +1,6 @@
 import http, { IncomingMessage, Server, ServerResponse } from 'http';
-import AddRoute, { RouteHandler, Routes } from './helper/routehandler';
-
-AddRoute("GET", "/", (req, res) => {
-    res.writeHead(200, { "content-type": "application/json" });
-    res.end(JSON.stringify({
-        message: "request send successfully.........",
-        path: req.url
-    }));
-})
+import { RouteHandler, Routes } from './helper/routehandler';
+import "./Routes/index"
 
 const server: Server = http.createServer((req: IncomingMessage, res: ServerResponse) => {
     console.log("Server is running ..........");
